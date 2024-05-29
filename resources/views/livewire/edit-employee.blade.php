@@ -14,7 +14,7 @@
                         <label class="text-center text-5xl mb-10">Datos Empleado</label>
 
                         <label class="text-x1">Nombres y Apellidos</label>
-                        <x-input type="text" name="nombres" value="{{$employee->nombres}}" /><br>
+                        <x-input type="text" name="nombres" value="{{old('nombres', $employee->nombres)}}" /><br>
                         @error('nombres')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EmployeeRequest;
 use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-
 
 class EmployeeController extends Controller
 {
@@ -24,17 +24,18 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Employee $employee): View
+    public function create(Employee $employee)
     {
-        return view('livewire.create-employee', compact('employee'));
-
+        $departments = Department::all();
+        return view('livewire.create-employee', compact('employee', 'departments'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(EmployeeRequest $request): RedirectResponse
     {
+
         $employee = new Employee();
         $employee->nombres = $request->nombres;
         $employee->apellidos = $request->apellidos;
@@ -42,10 +43,7 @@ class EmployeeController extends Controller
         $employee->email = $request->email;
         $employee->numeroCelular = $request->numeroCelular;
         $employee->fechaContratacion = $request->fechaContratacion;
-
-        $Department = Department::findOrFail($request->input('department_id'));
-        $employee->Department()->associate($Department);
-
+        $employee->department_id = $request->department_id;
         $employee->save();
 
         return redirect()->route('dashboard')->with('success', 'Employee Created');
@@ -70,7 +68,7 @@ class EmployeeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Employee $employee): RedirectResponse
+    public function update(EmployeeRequest $request, Employee $employee): RedirectResponse
     {
         $employee->update($request->all());
         return redirect()->route('dashboard')->with('success', 'Employee Updated');

@@ -13,46 +13,46 @@
                         <label class="text-center text-5xl mb-10">Datos Empleado</label>
 
                         <label class="text-x1">Nombres</label>
-                        <x-input type="text" name="nombres" /><br>
+                        <x-input type="text" name="nombres" value="{{old('nombres')}}"/><br>
                         @error('nombres')
-                            <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                            {{$message}}
+                        @enderror
 
                         <label class="text-x1">Apellidos</label>
-                        <x-input type="text" name="apellidos" /><br>
+                        <x-input type="text" name="apellidos" value="{{old('apellidos')}}" /><br>
                         @error('apellidos')
-                            <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                            {{$message}}
+                        @enderror
 
                         <label class="text-x1">Cedula</label>
-                        <x-input type="text" name="cedula" /><br>
+                        <x-input type="text" name="cedula"  value="{{old('cedula')}}"/><br>
                         @error('cedula')
-                            <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                            {{$message}}
+                        @enderror
 
                         <label class="text-x1">Email</label>
-                        <x-input type="email" name="email" /><br>
+                        <x-input type="email" name="email"  value="{{old('email')}}"/><br>
                         @error('email')
-                            <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                            {{$message}}
+                        @enderror
 
                         <label class="text-x1">Nro Celular</label>
-                        <x-input type="text" name="numeroCelular" /><br>
+                        <x-input type="text" name="numeroCelular"  value="{{old('numeroCelular')}}"/><br>
                         @error('numeroCelular')
-                            <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                            {{$message}}
+                        @enderror
 
                         <label class="text-x1">Fecha Contratacion</label>
-                        <x-input type="date" name="fechaContratacion" /><br>
-                        @error('celular')
-                        <p style="color:red">{{$message}}</p>
-                        @enderror<br>
+                        <x-input type="date" name="fechaContratacion"  value="{{old('fechaContratacion')}}"/><br>
+                        @error('fechaContratacion')
+                            {{$message}}
+                        @enderror
 
                         <label for="department_id">Departamento</label>
                         <Select id="department_id" name="department_id" required>
-                         {{--    @foreach ($Department as $department)
+                            @foreach ($departments as $department)
                                 <option value="{{$department->id}}">{{$department->nombreDepartamento}}</option>
-                            @endforeach --}}
+                            @endforeach
                         </Select>
 
                     </div>

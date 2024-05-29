@@ -11,7 +11,7 @@ class Employee extends Model
 
     protected $fillable = [
         "nombres","apellidos","cedula","email", "numeroCelular",
-        "fechaContratacion","fechaDesvinculacion"
+        "fechaContratacion","fechaDesvinculacion", "department_id"
     ];
 
 

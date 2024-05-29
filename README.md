@@ -11,6 +11,7 @@ Projecto realizado con
 - **[yajra/laravel-oci8]**
 - **[fakerphp/faker1.23]**
 - **[laravel/pint:1.13]**
+- **[laravel-lang/common]**
 - **[laravel/sail:1.26]**
 - **[mockery/mockery:1.6]**
 - **[nunomaduro/collision:8.0]**
@@ -24,6 +25,7 @@ Projecto realizado con
 - **[pss:8.4.32]**
 - **[tindcss:3.4.0]**
 - **[v5.0]**
+
 
 
 
