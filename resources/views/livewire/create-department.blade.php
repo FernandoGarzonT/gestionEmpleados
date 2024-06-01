@@ -12,25 +12,23 @@
                     <div class="flex flex-col my-10">
                         <label class="text-center text-5xl mb-10">Datos Departamento</label>
 
-                        <label class="text-x1">Nombre Departamento</label>
+                        <label class="text-x1 mb-3">Nombre Departamento</label>
                         <x-input type="text" name="nombreDepartamento" /><br>
                         @error('nombreDepartamento')
-                            <p style="color:red">{{$message}}</p>
+                            <div class="alert">{{$message}}</div>
                         @enderror<br>
 
-                        <label class="text-x1">Nombre Puesto</label>
+                        <label class="text-x1 mb-3">Nombre Puesto</label>
                         <x-input type="text" name="nombrePuesto" /><br>
                         @error('nombrePuesto')
-                            <p style="color:red">{{$message}}</p>
+                            <div class="alert">{{$message}}</div>
                         @enderror<br>
 
-                        <label class="text-x1">Descripcion</label>
+                        <label class="text-x1 mb-3">Descripcion</label>
                         <x-input type="text" name="descripcion" /><br>
                         @error('descripcion')
-                            <p style="color:red">{{$message}}</p>
+                            <div class="alert">{{$message}}</div>
                         @enderror<br>
-
-
                     </div>
                     <x-button type="submit" class="mb-16">Crear Departamento</x-button>
                     <x-button href="{{route('dashboard')}}" class="mb-16 bg-yellow-600">Volver</x-button>

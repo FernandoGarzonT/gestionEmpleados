@@ -18,3 +18,14 @@
     margin: 0 auto;
     border-radius: 30px;
 }
+
+.alert {
+    margin-top: -35px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color:blue;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+

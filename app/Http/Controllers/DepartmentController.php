@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class DepartmentController extends Controller
@@ -29,7 +29,7 @@ class DepartmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(DepartmentRequest $request): RedirectResponse
     {
         $department = new Department();
         $department->nombreDepartamento = $request->nombreDepartamento;
@@ -59,7 +59,7 @@ class DepartmentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Department $Department): RedirectResponse
+    public function update(DepartmentRequest $request, Department $Department): RedirectResponse
     {
         $Department->update($request->all());
         return redirect()->route('dashboard')->with('success', 'Department Updated');

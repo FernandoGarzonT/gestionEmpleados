@@ -15,37 +15,37 @@
                         <label class="text-x1">Nombres</label>
                         <x-input type="text" name="nombres" value="{{old('nombres')}}"/><br>
                         @error('nombres')
-                            {{$message}}
+                           <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label class="text-x1">Apellidos</label>
                         <x-input type="text" name="apellidos" value="{{old('apellidos')}}" /><br>
                         @error('apellidos')
-                            {{$message}}
+                            <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label class="text-x1">Cedula</label>
                         <x-input type="text" name="cedula"  value="{{old('cedula')}}"/><br>
                         @error('cedula')
-                            {{$message}}
+                            <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label class="text-x1">Email</label>
                         <x-input type="email" name="email"  value="{{old('email')}}"/><br>
                         @error('email')
-                            {{$message}}
+                            <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label class="text-x1">Nro Celular</label>
                         <x-input type="text" name="numeroCelular"  value="{{old('numeroCelular')}}"/><br>
                         @error('numeroCelular')
-                            {{$message}}
+                            <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label class="text-x1">Fecha Contratacion</label>
                         <x-input type="date" name="fechaContratacion"  value="{{old('fechaContratacion')}}"/><br>
                         @error('fechaContratacion')
-                            {{$message}}
+                            <div class="alert">{{$message}}</div>
                         @enderror
 
                         <label for="department_id">Departamento</label>
