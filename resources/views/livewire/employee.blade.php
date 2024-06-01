@@ -7,7 +7,7 @@
         </x-slot>
         <div class="flex text-right text-2xl px-10 py-5 mx-auto">
             <div class="bg-white overflow-hidden shadow-xl rounded-lg px-5 py-2">
-                <a href="{{route('employee.create')}}">Crear Empleado</a>
+                <a href="{{route('employee.create')}}">{{__('Crear Empleado')}}</a>
             </div>
         </div>
 

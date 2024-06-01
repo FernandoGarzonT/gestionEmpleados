@@ -10,19 +10,19 @@
             <div class="flex flex-col my-10">
                 <label class="text-center text-5xl mb-10">Datos Empleado</label>
 
-                <label class="text-x1">Nombres y Apellidos</label>
+                <label class="text-x1">{{__('Nombres y Apellidos')}}</label>
                 <h1 class="text-right mb-5 text-blue-600">{{$employee->nombres}} {{$employee->apellidos}}</h1>
 
-                <label class="text-x1">Cedula</label>
+                <label class="text-x1">{{__('Cedula')}}</label>
                 <p class="text-right mb-5 text-blue-600"> {{$employee->cedula}}</p>
 
-                <label class="text-x1">Email</label>
+                <label class="text-x1">{{__('Email')}}</label>
                 <p class="text-right mb-5 text-blue-600">{{$employee->email}}</p>
 
-                <label class="text-x1">Nro Celular</label>
+                <label class="text-x1">{{__('Nro Celular')}}</label>
                 <p class="text-right mb-5 text-blue-600">{{$employee->numeroCelular}}</p>
 
-                <label class="text-x1">Fecha Contratacion</label>
+                <label class="text-x1">{{__('Fecha Contratacion')}}</label>
                 <p class="text-right mb-5 text-blue-600">{{$employee->fechaContratacion}}</p>
             </div>
 

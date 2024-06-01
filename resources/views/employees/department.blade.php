@@ -8,15 +8,15 @@
     <div class="py-12">
         <div class="text-3xl gap-2 mx-20 sm:px-10 lg:px-8 bg-white overflow-hidden shadow-xl sm:rounded-lg">
             <div class="flex flex-col my-10">
-                <label class="text-center text-5xl mb-10">Datos Departamentos</label>
+                <label class="text-center text-5xl mb-10">{{__('Datos Departamentos')}}</label>
 
-                <label class="text-x1">Departamento</label>
+                <label class="text-x1">{{__('Departamento')}}</label>
                 <h1 class="text-right mb-5 text-blue-600">{{$Department->nombreDepartamento}}</h1>
 
-                <label class="text-x1">Puesto de Trabajo</label>
+                <label class="text-x1">{{__('Puesto de Trabajo')}}</label>
                 <p class="text-right mb-5 text-blue-600"> {{$Department->nombrePuesto}}</p>
 
-                <label class="text-x1">Descripcion</label>
+                <label class="text-x1">{{__('Descripcion')}}</label>
                 <p class="text-right mb-5 text-blue-600">{{$Department->descripcion}}</p>
             </div>
 
