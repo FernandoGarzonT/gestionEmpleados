@@ -5,7 +5,7 @@
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
-        <form action="{{route('employee.store')}}" method="post">
+        <form action="{{route('Employees.store')}}" method="post">
             @csrf
             <div class="py-12">
                 <div class="text-3xl gap-2 mx-20 sm:px-10 lg:px-8 bg-white overflow-hidden shadow-xl sm:rounded-lg">

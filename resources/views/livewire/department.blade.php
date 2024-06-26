@@ -19,7 +19,7 @@
                         <div class="my-10">
                             <a href="{{route('Departments.show', $departments)}}">
                                 {{$departments->nombreDepartamento}}
-                                {{$departments->nombrePuesto}}</a>
+                            </a>
                         </div>
                     @endforeach
                 </div>

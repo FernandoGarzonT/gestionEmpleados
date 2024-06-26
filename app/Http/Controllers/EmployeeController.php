@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
+use App\Mail\EmployeeCreateMailable;
 use App\Models\Department;
 use App\Models\Employee;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class EmployeeController extends Controller
@@ -24,10 +26,10 @@ class EmployeeController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Employee $employee)
+    public function create(Employee $Employee)
     {
         $departments = Department::all();
-        return view('livewire.create-employee', compact('employee', 'departments'));
+        return view('livewire.create-employee', compact('Employee', 'departments'));
     }
 
     /**
@@ -46,29 +48,31 @@ class EmployeeController extends Controller
         $employee->department_id = $request->department_id;
         $employee->save();
 
+        Mail::to('testemail@email.com')->send(new EmployeeCreateMailable($employee));
+
         return redirect()->route('dashboard')->with('success', 'Employee Created');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Employee $employee): View
+    public function show(Employee $Employee): View
     {
-        return view('employees.employees', compact('employee'));
+        return view('employees.employees', compact('Employee'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Employee $employee): View
+    public function edit(Employee $Employee): View
     {
-        return view('livewire.edit-employee', compact('employee'));
+        return view('livewire.edit-employee', compact('Employee'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(EmployeeRequest $request, Employee $employee): RedirectResponse
+    public function update(EmployeeRequest $request, Employee $Employee): RedirectResponse
     {
         $employee->update($request->all());
         return redirect()->route('dashboard')->with('success', 'Employee Updated');
@@ -77,9 +81,9 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Employee $employee): RedirectResponse
+    public function destroy(Employee $Employee): RedirectResponse
     {
-        $employee->delete();
+        $Employee->delete();
         return redirect()->route('dashboard');
     }
 }

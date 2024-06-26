@@ -7,7 +7,7 @@
         </x-slot>
         <div class="flex text-right text-2xl px-10 py-5 mx-auto">
             <div class="bg-white overflow-hidden shadow-xl rounded-lg px-5 py-2">
-                <a href="{{route('employee.create')}}">{{__('Crear Empleado')}}</a>
+                <a href="{{route('Employees.create')}}">{{__('Crear Empleado')}}</a>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @foreach ($employees as $employee)
                         <div class="my-10">
-                            <a href="{{route('employee.show', $employee)}}">{{$employee->nombres}} {{$employee->apellidos}}</a>
+                            <a href="{{route('Employees.show', $employee)}}">{{$employee->nombres}} {{$employee->apellidos}}</a>
                         </div>
                     @endforeach
                 </div>

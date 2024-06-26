@@ -5,7 +5,7 @@
                 {{ __('Dashboard') }}
             </h2>
         </x-slot>
-        <form action="{{route('employee.update', $employee)}}" method="post">
+        <form action="{{route('Employees.update', $Employee)}}" method="post">
             @csrf
             @method('put')
             <div class="py-12">
@@ -14,35 +14,35 @@
                         <label class="text-center text-5xl mb-10">Datos Empleado</label>
 
                         <label class="text-x1">Nombres y Apellidos</label>
-                        <x-input type="text" name="nombres" value="{{old('nombres', $employee->nombres)}}" /><br>
+                        <x-input type="text" name="nombres" value="{{old('nombres', $Employee->nombres)}}" /><br>
                         @error('nombres')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>
-                        <x-input type="text" name="apellidos" value="{{$employee->apellidos}}" /><br>
+                        <x-input type="text" name="apellidos" value="{{$Employee->apellidos}}" /><br>
                         @error('apellidos')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>
 
                         <label class="text-x1">Cedula</label>
-                        <x-input type="text" name="cedula" value="{{$employee->cedula}}" /><br>
+                        <x-input type="text" name="cedula" value="{{$Employee->cedula}}" /><br>
                         @error('cedula')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>
 
                         <label class="text-x1">Email</label>
-                        <x-input type="email" name="email" value="{{$employee->email}}" /><br>
+                        <x-input type="email" name="email" value="{{$Employee->email}}" /><br>
                         @error('email')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>
 
                         <label class="text-x1">Nro Celular</label>
-                        <x-input type="text" name="numeroCelular" value="{{$employee->numeroCelular}}" /><br>
+                        <x-input type="text" name="numeroCelular" value="{{$Employee->numeroCelular}}" /><br>
                         @error('numeroCelular')
                             <p style="color:red">{{$message}}</p>
                         @enderror<br>
 
                         <label class="text-x1">Fecha Contratacion</label>
-                        <x-input type="date" name="fechaContratacion" value="{{$employee->fechaContratacion}}" /><br>
+                        <x-input type="date" name="fechaContratacion" value="{{$Employee->fechaContratacion}}" /><br>
                         @error('celular')
                         <p style="color:red">{{$message}}</p>
                         @enderror<br>
