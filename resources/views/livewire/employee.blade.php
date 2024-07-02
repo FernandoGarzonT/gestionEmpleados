@@ -21,7 +21,8 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @foreach ($employees as $employee)
                         <div class="my-10">
-                            <a href="{{route('Employees.show', $employee)}}">{{$employee->nombres}} {{$employee->apellidos}}</a>
+                            <a href="{{route('Employees.show', $employee)}}">
+                                {{$employee->nombres}} {{$employee->apellidos}}</a>
                         </div>
                     @endforeach
                 </div>

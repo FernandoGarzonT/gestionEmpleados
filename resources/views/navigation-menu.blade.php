@@ -181,7 +181,7 @@
                                    @click.prevent="$root.submit();">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
-                </form> --}}
+                </form>
 
                <!-- Team Management -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())

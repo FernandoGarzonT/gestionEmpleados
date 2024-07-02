@@ -17,12 +17,12 @@ class EmployeeController extends Controller
      */
     public function index(Request $request):View
     {
-        $employees= Employee::where('nombres', 'like', $request->input('search').'%')
-                                ->paginate(8);
-        $employees= Employee::where('apellidos', 'like', $request->input('search').'%')
-                                ->paginate(8);
-        $employees= Employee::where('fechaContratacion', 'like', $request->input('search-date').'%')
-                                ->paginate(8);
+        $search = $request->input('search');
+        $employees = Employee::where(function($query) use ($search){
+                        $query->where('nombres', 'like', $search.'%')
+                              ->orWhere('apellidos', 'like', $search.'%')
+                              ->orWhere('fechaContratacion', 'like', $search.'%');
+                    })->paginate(8);
 
         return view('livewire.employee', compact('employees'));
     }
