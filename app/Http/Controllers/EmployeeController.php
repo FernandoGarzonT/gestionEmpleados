@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\EmployeeRequest;
@@ -16,9 +15,14 @@ class EmployeeController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index():View
+    public function index(Request $request):View
     {
-        $employees= Employee::paginate(8);
+        $employees= Employee::where('nombres', 'like', $request->input('search').'%')
+                                ->paginate(8);
+        $employees= Employee::where('apellidos', 'like', $request->input('search').'%')
+                                ->paginate(8);
+        $employees= Employee::where('fechaContratacion', 'like', $request->input('search-date').'%')
+                                ->paginate(8);
 
         return view('livewire.employee', compact('employees'));
     }

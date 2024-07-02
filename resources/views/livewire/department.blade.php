@@ -12,7 +12,9 @@
             </div>
         </div>
 
-        <div class="mt-0 py-10">
+        <x-search-department />
+
+        <div class="mt-0 py-2">
             <div class="text-center text-5xl gap-2 mx-auto sm:px-10 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @foreach ($Department as $departments)

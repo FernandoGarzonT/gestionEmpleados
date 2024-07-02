@@ -11,7 +11,12 @@
             </div>
         </div>
 
-        <div class="mt-0 py-10">
+        <div class="py-2 xl:mx-80 lg:mx-32 md:mx-16 sm:mx-7">
+            <x-search-employee />
+            <x-search-date-employee />
+        </div>
+
+        <div class="mt-0 py-2 xl:mx-72 lg:mx-32 md:mx-5 sm:mx-0">
             <div class="text-center text-5xl gap-2 mx-auto sm:px-10 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     @foreach ($employees as $employee)

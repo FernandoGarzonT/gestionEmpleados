@@ -6,15 +6,18 @@ use App\Http\Requests\DepartmentRequest;
 use App\Models\Department;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $Department=Department::paginate(8);
+        $Department = Department::where('nombreDepartamento', 'like', $request->input('search').'%')
+                                    ->paginate(8);
+
         return view('livewire.department', compact('Department'));
     }
 
